@@ -7,15 +7,15 @@
   <title>Drinking@Home</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css" />
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <link rel="stylesheet" href="./assets/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-  <section class="container-modal">
+  <!-- <section class="container-modal">
     <div class="modal-background">
       <!--Modal for age verification-->
-      <div class="age-verification-modal" id="age-modal">
+      <!-- <div class="age-verification-modal" id="age-modal">
         <div class="modal-card">
           <header class="modal-card-head">
             <div class="column is-full">
@@ -94,31 +94,77 @@
       </div>
     </div>
    
-  </section>
+  </section> --> -->
   
 
 
   <!-- NAV BAR -->
-  <div class="hero is-light">
-    <div class="hero-light">
-      <nav>
-        <div class="nav-left">
-          <a class="nav-item">
-            <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="header-img" />
-          </a>
-        </div>
-        <div class="nav-center">
-          <h1 class="title is-1">Drinking@Home</h1>
-        </div>
-        <div class="nav-right">
-          <a id="nav-btn" class="nav-item is-tab is-hidden-mobile is-active">Home</a>
-          <a id="nav-btn" class="nav-item is-tab is-hidden-mobile">Recipes by Spirit</a>
-          <a id="nav-btn" class="nav-item is-tab is-hidden-mobile">Recipes by Type</a>
-          <a id="nav-btn" class="nav-item is-tab is-hidden-mobile">Recipes By Occasion</a>
-        </div>
-      </nav>
+<!-- NAV BAR -->
+<div class="hero is-light">
+  <div class="hero-light">
+    <nav>
+      <div class="nav-left">
+        <a class="nav-item">
+          <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="header-img" />
+        </a>
+      </div>
+      <div class="nav-center">
+        <h1 class="title is-1">Drinking@Home</h1>
+      </div>
+      <div class="nav-right">
+        <a id="nav-btn" class="nav-item is-tab is-active home">Home</a>
+        <a id="nav-btn"  class="nav-item is-tab spirit">Recipes by Spirit</a>
+        <a id="nav-btn" class="nav-item is-tab type">Recipes by Type</a>
+        <a id="nav-btn" class="nav-item is-tab fun">Fun</a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Home Page  -->
+<div id="home-pg"class="hero is-info">
+  <div class="hero-info">
+    <p>Home page</p>
+  </div>
+</div>
+
+<!-- Spirit Page -->
+
+<div id="spirit-pg"class="hero is-primary is-hidden">
+  <div class="hero-primary">
+    <p>Spirit Page</p>
+    <button class="button is-primary vodka spirit" id="vodka">Vodka</button>
+    <button class="button is-primary whiskey spirit" id="whiskey">Whiskey</button>
+    <button class="button is-primary rum spirit" id="rum">Rum</button>
+    <button class="button is-primary gin spirit" id="gin">Gin</button>
+    <div id="results">
+      <!-- search results go here in newly generated div -->
     </div>
   </div>
+</div>
+
+
+<!-- Recipes by Type -->
+
+<div id="type-pg"class="hero is-warning is-hidden">
+  <div class="hero-warning">
+    <p>type Page</p>
+    <button class="button is-link cocktail" id="margarita">Margarita</button>
+    <button class="button is-link cocktail" id="mojito">Mojito</button>
+    <button class="button is-link cocktail" id="old fashioned">Old Fashioned</button>
+    <button class="button is-link cocktail" id="long island tea">Long Island Tea</button>
+
+  </div>
+</div>
+
+<!-- fun page -->
+<div id="fun-pg"class="hero is-link is-hidden">
+  <div class="hero-link">
+    <p>FUN Page</p>
+  
+
+  </div>
+</div>
 
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
