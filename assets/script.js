@@ -1,3 +1,5 @@
+var giphyApiKey = "bkAxzVVfXtpuYo0AmrdqJO1Gp3erKjJE";
+
 var ageModal = $(".container-modal");
 var birthYear = $("#verify-year");
 
@@ -109,12 +111,7 @@ $(document).ready(function () {
 
     // Get Method for random cocktail
     var url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-    $.ajax({
-        url: url,
-        method: "GET" 
-    }).then(function (response){
-        // console.log(response)
-    })
+   
 
     // add event listener for menu btns
     $(".spirit").on("click", function () {
@@ -136,16 +133,56 @@ $(document).ready(function () {
         $("#spirit-pg").addClass("is-hidden");
         $("#type-pg").addClass("is-hidden");
         $("#fun-pg").removeClass("is-hidden");
+
+        //random cocktail for fun page
+        $.ajax({
+            url: url,
+            method: "GET" 
+        }).then(function (response){
+            funPageRandom(response);
+        
+        })
     })
     $(".home").on("click", function () {
         $("#fun-pg").addClass("is-hidden");
         $("#spirit-pg").addClass("is-hidden");
         $("#type-pg").addClass("is-hidden");
         $("#home-pg").removeClass("is-hidden");
+  
+
     })
-
-
 
 })
 
+
+
+// random gif image on fun page
+var giphyURL = "https://api.giphy.com/v1/gifs/random?limit=1&tag=drink&api_key=" + giphyApiKey;
+
+$.ajax({
+  url: giphyURL,
+  method: "GET"
+}).then(function(response) {
+  var image = $("<img>").attr("src", response.data.image_url);
+  $("#gif-img").append(image).addClass("");
+});
+
+//function for processing response for cocktail api
+function funPageRandom(response){
+    var randomDrink = response.drinks[0];
+    var image = $("<img>").attr("src", randomDrink.strDrinkThumb);
+    $("#random-drink-fun").append(image).addClass("");
+
+    //for loop for ingredients 
+for (var i = 1; i <= 15; i++) {
+    var ingredient = randomDrink["strIngredient"+i];
+    var measure = randomDrink["strMeasure"+i];
+    if (ingredient) {
+        var fullIngred = measure + " " + ingredient;
+        var ingedEl = $("<div>").attr("id", "ing-" +i).append(fullIngred)
+        $("#ingredients").append(ingedEl);
+    }
+}
+
+}
 
