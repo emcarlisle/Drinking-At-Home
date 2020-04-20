@@ -17,105 +17,126 @@
 <body>
   <section class="hero">
     <div class="hero-body" style="background: url(https://images.app.goo.gl/db4kRdtS13NDs6WJ6)">
-        <!-- NAV BAR -->
-        <div class="hero is-light">
-          <div class="hero-light">
-            <nav>
-              <div class="nav-left">
-                <a class="nav-item">
-                  <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="header-img" />
-                </a>
-                <header class="has-text-centered">Time Since Quarantine</header>
-                <div id="clockdiv" display="is-inline-block">
-                  <div>
-                    <span class="months" id="months"></span>
-                    <div class="smalltext">Months</div>
-                  </div>
-                  <div>
-                    <span class="weeks" id="weeks"></span>
-                    <div class="smalltext">Weeks</div>
-                  </div>
-                  <div>
-                    <span class="days" id="days"></span>
-                    <div class="smalltext">Days</div>
-                  </div>
-                  <div>
-                    <span class="minutes" id="hours"></span>
-                    <div class="smalltext">Hours</div>
-                  </div>
+      <!-- NAV BAR -->
+      <div class="hero is-light">
+        <div class="hero-light">
+          <nav>
+            <div class="nav-left">
+              <a class="nav-item">
+                <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="header-img" />
+              </a>
+              <header class="has-text-centered">Time Since Quarantine</header>
+              <div id="clockdiv" display="is-inline-block">
+                <div>
+                  <span class="months" id="months"></span>
+                  <div class="smalltext">Months</div>
+                </div>
+                <div>
+                  <span class="weeks" id="weeks"></span>
+                  <div class="smalltext">Weeks</div>
+                </div>
+                <div>
+                  <span class="days" id="days"></span>
+                  <div class="smalltext">Days</div>
+                </div>
+                <div>
+                  <span class="minutes" id="hours"></span>
+                  <div class="smalltext">Hours</div>
                 </div>
               </div>
-              <div class="nav-center">
-                <h1 class="title is-1">Drinking@Home</h1>
-              </div>
-              <div class="nav-right">
-                <a id="nav-btn" class="nav-item is-tab is-active home">Home</a>
-                <a id="nav-btn" class="nav-item is-tab spirit">Recipes by Spirit</a>
-                <a id="nav-btn" class="nav-item is-tab type">Recipes by Type</a>
-                <a id="nav-btn" class="nav-item is-tab fun">Fun</a>
-              </div>
-            </nav>
-          </div>
-        </div>
-        
-        <!-- Home Page  -->
-        <div id="home-pg" class="hero is-info">
-          <div class="hero-info">
-            <p>Home page</p>
-          </div>
-        </div>
-        
-        <!-- Spirit Page -->
-        
-        <div id="spirit-pg" class="hero is-primary is-hidden">
-          <div class="hero-primary">
-            <p>Spirit Page</p>
-            <button class="button is-primary vodka spirit" id="vodka">Vodka</button>
-            <button class="button is-primary whiskey spirit" id="whiskey">Whiskey</button>
-            <button class="button is-primary rum spirit" id="rum">Rum</button>
-            <button class="button is-primary gin spirit" id="gin">Gin</button>
-            <div id="results">
-              <!-- search results go here in newly generated div -->
             </div>
+            <div class="nav-center">
+              <h1 class="title is-1">Drinking@Home</h1>
+            </div>
+            <div class="nav-right">
+              <a id="nav-btn" class="nav-item is-tab is-active home">Home</a>
+              <a id="nav-btn" class="nav-item is-tab spirit">Recipes by Spirit</a>
+              <a id="nav-btn" class="nav-item is-tab type">Recipes by Type</a>
+              <a id="nav-btn" class="nav-item is-tab fun">Random Fun</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Home Page  -->
+      <div id="home-pg" class="hero is-info">
+        <div class="hero-info">
+          <p>Home page</p>
+        </div>
+      </div>
+
+      <!-- Spirit Page -->
+      <div id="spirit-pg" class="hero is-primary is-hidden">
+        <div class="hero-primary">
+          <p>Spirit Page</p>
+          <button class="button is-primary vodka spirit" id="vodka">Vodka</button>
+          <button class="button is-primary whiskey spirit" id="whiskey">Whiskey</button>
+          <button class="button is-primary rum spirit" id="rum">Rum</button>
+          <button class="button is-primary gin spirit" id="gin">Gin</button>
+          <div id="results">
+            <!-- search results go here in newly generated div -->
           </div>
         </div>
-        
-        
-        <!-- Recipes by Type -->
-        
-        <div id="type-pg" class="hero is-warning is-hidden">
-          <div class="hero-warning">
-            <p>type Page</p>
-            <button class="button is-link cocktail" id="margarita">Margarita</button>
-            <button class="button is-link cocktail" id="mojito">Mojito</button>
-            <button class="button is-link cocktail" id="old fashioned">Old Fashioned</button>
-            <button class="button is-link cocktail" id="long island tea">Long Island Tea</button>
-        
-          </div>
+      </div>
+
+      <!-- Recipes by Type -->
+      <div id="type-pg" class="hero is-warning is-hidden">
+        <div class="hero-warning">
+          <p>type Page</p>
+          <button class="button is-link cocktail" id="margarita">Margarita</button>
+          <button class="button is-link cocktail" id="mojito">Mojito</button>
+          <button class="button is-link cocktail" id="old fashioned">Old Fashioned</button>
+          <button class="button is-link cocktail" id="long island tea">Long Island Tea</button>
         </div>
-        
-        <!-- fun page -->
-        <div id="fun-pg" class="hero is-link is-hidden">
-          <div class="hero-link">
-            <p>FUN Page</p>
-        
-          </div>
-          <div class="hero-body">
-            <div id="gif-img" class="tile"></div>
-            <div id="random-drink-fun" class="tile"></div>
-            <div><span id="ingredients" class="tile"></span></div>
+      </div>
+
+      <!-- Fun page -->
+      <div id="fun-pg" class="hero is-link is-hidden">
+        <div class="hero-link">
+          <h1 class="title text-center">RANDOM FUN</h1>
+        </div>
+        <div class="hero-body">
+          <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+              <div class="tile">
+                <div class="tile is-parent is-vertical">
+                  <article class="tile is-child notification is-warning">
+                    <figure class="image is-square">
+                      <div id="gif-img" class="tile"></div>
+                    </figure>
+                  </article>
+                </div>
+                <div class="tile is-parent">
+                  <article class="tile is-child notification is-danger">
+                    <p class="title text-center"><span id="random-drink-name"></span></p>
+                    <figure class="image is-4by3">
+                      <div id="random-drink-fun" class="tile"></div>
+                    </figure>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-success">
+                <div class="content">
+                  <p class="title">Ingredients</p>
+                  <div class="subtitle">
+                    <ul id="ingredients"></ul>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
 
   </section>
-        
-  
- 
-    
-  
+
+
+
+
+
 
 </body>
 
