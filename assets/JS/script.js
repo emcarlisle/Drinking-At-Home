@@ -155,5 +155,4 @@ $(document).ready(function () {
                 $("#ingredients").append(ingedEl);
             }
         }
-    }
-});
+    };
