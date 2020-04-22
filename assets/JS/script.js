@@ -1,5 +1,6 @@
 var giphyApiKey = "bkAxzVVfXtpuYo0AmrdqJO1Gp3erKjJE";
 
+
 $(document).ready(function () {
     $.ageCheck({
         minAge: 21
@@ -30,14 +31,34 @@ $(document).ready(function () {
 
     // Get Method using spirit name or ingredient 
     $(".spirit").on("click", function () {
-        var spirit = $(this).attr("id");
-        var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + spirit;
+       var spirit = $(this).attr("id");
+      
+    var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + spirit;
+    $.ajax({
+        url: url,
+        method: "GET" 
+    }).then(function (response){
+    $.ajax({
+        url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spirit, 
+        method: "GET"
+    }).then(function (response){
+        for (let i = 0; i < (response.drinks.length); i++) {
+        ($('.spirit-recipes')).append(('<li>'))
+        .append(('<div></div>')).addClass('slide-item is-active')
+        .append('<img src=' + (response.drinks[i].strDrinkThumb) + '>').addClass('slide-image')
+        .append(('<p>' + (response.drinks[i].strDrink) + '</p>')).addClass("slide-caption")
+    
+        var drinkID = (response.drinks[i].idDrink)
         $.ajax({
-            url: url,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response)
-        });
+            url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID
+        }).then(function (response) { 
+            console.log(response.drinks[i].strInstructions)
+            // ($('.slide-item')).append('<p>' + (response.drinks[i].strInstructions) + '</p>')
+        })
+        }
+    })
+    })
+    })
     });
 
     // Get Method using cocktail name 
@@ -135,4 +156,4 @@ $(document).ready(function () {
             }
         }
     }
-})
+});
