@@ -12,6 +12,7 @@ border-color: burlywood;
 margin: 10px;
 }
 
+
 header {
     color: #396;
     font-weight: 100;
@@ -49,8 +50,13 @@ header {
 .nav-bar {
     margin-bottom: 5%;
 }
+
 .slide-image {
     height: 550px;
     width: 350px; 
      display: block;
+}
+
+.text-center {
+    text-align: center;
 }
