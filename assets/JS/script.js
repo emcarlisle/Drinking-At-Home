@@ -79,23 +79,18 @@ $(document).ready(function () {
     // add event listener for menu btns
     $(".spirit").on("click", function () {
         $("#home-pg").addClass("is-hidden");
-        $("#type-pg").addClass("is-hidden");
         $("#fun-pg").addClass("is-hidden");
         $("#spirit-pg").removeClass("is-hidden");
-    });
-
-    $(".type").on("click", function () {
-        $("#home-pg").addClass("is-hidden");
-        $("#spirit-pg").addClass("is-hidden");
-        $("#fun-pg").addClass("is-hidden");
-        $("#type-pg").removeClass("is-hidden");
+        $("#search-pg").addClass("is-hidden");
+        $("#search-error-pg").addClass("is-hidden")
     });
 
     $(".fun").on("click", function () {
         $("#home-pg").addClass("is-hidden");
         $("#spirit-pg").addClass("is-hidden");
-        $("#type-pg").addClass("is-hidden");
         $("#fun-pg").removeClass("is-hidden");
+        $("#search-pg").addClass("is-hidden");
+        $("#search-error-pg").addClass("is-hidden")
 
         //random cocktail for fun page
         $.ajax({
@@ -113,8 +108,9 @@ $(document).ready(function () {
     $(".home").on("click", function () {
         $("#fun-pg").addClass("is-hidden");
         $("#spirit-pg").addClass("is-hidden");
-        $("#type-pg").addClass("is-hidden");
         $("#home-pg").removeClass("is-hidden");
+        $("#search-pg").addClass("is-hidden");
+        $("#search-error-pg").addClass("is-hidden")
     });
 
     // random gif image on fun page
@@ -127,15 +123,15 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             $("#gif-img").empty();
-            var image = $("<img>").attr("src", response.data.image_url);
-            $("#gif-img").append(image).addClass("");
+            var image = $("<img>").attr("src", response.data.image_url).addClass("img-radius");
+            $("#gif-img").append(image);
         });
     }
 
     // Function for processing response for cocktail api
     function funPageRandom(response) {
         var randomDrink = response.drinks[0];
-        var image = $("<img>").attr("src", randomDrink.strDrinkThumb);
+        var image = $("<img>").attr("src", randomDrink.strDrinkThumb).addClass("img-radius");
         $("#random-drink-fun").append(image);
 
         var randomDrinkName = response.drinks[0].strDrink;
