@@ -16,6 +16,7 @@ $(document).ready(function () {
             if (!response.drinks) {
                 $("#search-error-pg").removeClass("is-hidden");
             } else {
+                $("#search-ingredients").empty();
                 var searchDrink = response.drinks[0];
                 bindSearchResults(searchDrink);
             }
