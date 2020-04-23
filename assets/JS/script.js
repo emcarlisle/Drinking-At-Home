@@ -8,7 +8,7 @@ $(document).ready(function () {
     startCount();
 
     function startCount() {
-        var today = moment("2020-07-23");
+        var today = moment();
         var then = moment("2020-03-24");
         var duration = moment.duration(today.diff(then));
         var months = duration.asMonths();
@@ -32,7 +32,7 @@ $(document).ready(function () {
     // Get Method using spirit name or ingredient 
     $(".spirit").on("click", function () {
        var spirit = $(this).attr("id");
-      
+        console.log(this);
     var url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + spirit;
     $.ajax({
         url: url,
@@ -125,6 +125,7 @@ $(document).ready(function () {
             url: giphyURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
             $("#gif-img").empty();
             var image = $("<img>").attr("src", response.data.image_url);
             $("#gif-img").append(image).addClass("");
