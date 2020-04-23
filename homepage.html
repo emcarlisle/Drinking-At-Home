@@ -17,7 +17,7 @@
 <body>
     <section class="hero">
         <div class="hero is-light">
-            <div class="hero-light transparent">
+            <div class="hero-light" style="background-image: url(https://i.imgur.com/EZJLDxR.png?1)">
                 <div class="container">
                     <header class="has-text-centered">Time Since Quarantine</header>
                     <div id="clockdiv" display="is-inline-block">
@@ -39,23 +39,24 @@
                         </div>
                     </div>
                 </div>
-                <h1 class="title is-1">Drinking@Home</h1>
+                <h1 class="title">Drinking@Home</h1>
                 <!-- NAV BAR -->
                 <navbar>
                     <div class="navbar-start">
                         <a id="nav-btn" class="nav-item is-tab is-active home">Home</a>
                         <a id="nav-btn" class="nav-item is-tab spirit">Spirit Type</a>
                         <a id="nav-btn" class="nav-item is-tab fun">Random Fun</a>
-                    </div>
-                    <div class="navbar-end"></div>        
-                        <div class="navbar-item">
+                        <div class="navbar-end">      
+                        <div class="navbar-item is-pulled-right">
                             <div class="field is-grouped">
                                 <p class="control">
                                     <input class="input" id="user-input" type="text" placeholder="Favorite Cocktail?">
                                 </p>
                                 <p class="control">
-                                    <a class="button is-primary">
-                                        <button type="search" id="search-cocktails" class="btn btn-primary fas fa-search"></button>
+                                    <a class="button" id="search-cocktails">
+                                        <span class="icon">
+                                            <i class="fas fa-search" aria-hidden="true"></i>
+                                        </span>
                                     </a>
                                 </p>    
                             </div>
@@ -64,6 +65,8 @@
                 </navbar>
             </div>
         </div>
+                        
+                    
                             
                     
         <!-- Home Page  -->
