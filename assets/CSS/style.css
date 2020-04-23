@@ -16,8 +16,7 @@ margin: 10px;
 header {
     color: #396;
     font-weight: 100;
-    font-size: 40px;
-    margin: 40px 0px 20px;
+    font-size: 30px;
 }
   
 #clockdiv{
@@ -25,19 +24,19 @@ header {
     color: #fff;
     font-weight: 100;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
   
 #clockdiv > div{
-    padding: 10px;
-    border-radius: 3px;
+    padding: 5px;
+    border-radius: 1px;
     background: #00BF96;
     display: inline-block;
 }
 
 #clockdiv div > span{
-    padding: 15px;
-    border-radius: 3px;
+    padding: 5px;
+    border-radius: 1px;
     background: #00816A;
     display: inline-block;
 }
@@ -54,9 +53,17 @@ header {
 .slide-image {
     height: 550px;
     width: 350px; 
-     display: block;
+    display: block;
 }
 
 .text-center {
     text-align: center;
 }
+
+.hero-light.transparent {
+    background: url(https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2019%2F02%2Fcocktail-books-blog0219.jpg);
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.825;
+} 
+
