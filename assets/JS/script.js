@@ -5,7 +5,7 @@ $(document).ready(function () {
     });
     startCount();
     function startCount() {
-        var today = moment("2020-07-23");
+        var today = moment();
         var then = moment("2020-03-24");
         var duration = moment.duration(today.diff(then));
         var months = duration.asMonths();
@@ -25,6 +25,7 @@ $(document).ready(function () {
     }
     // Get Method using spirit name or ingredient 
     $(".spirit").on("click", function () {
+
         $('.spirit-recipes').html('');
         $('.spirit-info').html('');
         var spirit = $(this).attr("id");
@@ -163,7 +164,7 @@ function funPageRandom(response) {
                 fullIngred = measure + " " + ingredient;
             } else {
                 fullIngred = ingredient;
-            }
+           }
             var ingedEl = $("<li>").attr("id", "ing-" + i).append(fullIngred);
             $("#ingredients").append(ingedEl);
         }
