@@ -15,10 +15,12 @@ $(document).ready(function () {
         }).then(function (response) {
             if (!response.drinks) {
                 $("#search-error-pg").removeClass("is-hidden");
+                $("#user-input").val('');
             } else {
                 $("#search-ingredients").empty();
                 var searchDrink = response.drinks[0];
                 bindSearchResults(searchDrink);
+                $("#user-input").val('');
             }
         });
     });

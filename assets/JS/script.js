@@ -59,7 +59,7 @@ $(document).ready(function () {
                         drink.ingredients = []
 
                         $('.spirit-recipes')
-                            .append("<div class='tile is-ancestor'><div class='tile is-parent'><div class='tile is-child box'><h3 class='drink-name'>" + drink.name + "</h3><img class='cocktail-img' src=" + drink.image + "><p class='ingr-text'></p><p id='" + i + "'></p>" + drink.text + "</div></div>");
+                            .append("<div class='tile is-ancestor'><div class='tile is-parent'><div class='tile is-child box'><h3 class='drink-name'>" + drink.name + "</h3><img class='cocktail-img' id='cocktail-img' src=" + drink.image + "><p class='ingr-text'></p><p id='" + i + "'></p>" + drink.text + "</div></div>");
 
                         for (var j = 1; j <= 15; j++) {
                             var currentDrink = data.drinks[0]
@@ -102,21 +102,17 @@ var url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 // add event listener for menu btns
 $(".spirit").on("click", function () {
     $("#home-pg").addClass("is-hidden");
-    $("#type-pg").addClass("is-hidden");
+    $("#search-error-pg").addClass("is-hidden");
+    $("#search-pg").addClass("is-hidden");
     $("#fun-pg").addClass("is-hidden");
     $("#spirit-pg").removeClass("is-hidden");
-});
-$(".type").on("click", function () {
-    $("#home-pg").addClass("is-hidden");
-    $("#spirit-pg").addClass("is-hidden");
-    $("#fun-pg").addClass("is-hidden");
-    $("#type-pg").removeClass("is-hidden");
 });
 $(".fun").on("click", function () {
     $("#home-pg").addClass("is-hidden");
     $("#spirit-pg").addClass("is-hidden");
-    $("#type-pg").addClass("is-hidden");
+    $("#search-pg").addClass("is-hidden");
     $("#fun-pg").removeClass("is-hidden");
+    $("#search-error-pg").addClass("is-hidden");
     //random cocktail for fun page
     $.ajax({
         url: url,
@@ -132,8 +128,9 @@ $(".fun").on("click", function () {
 $(".home").on("click", function () {
     $("#fun-pg").addClass("is-hidden");
     $("#spirit-pg").addClass("is-hidden");
-    $("#type-pg").addClass("is-hidden");
+    $("#search-pg").addClass("is-hidden");
     $("#home-pg").removeClass("is-hidden");
+    $("#search-error-pg").addClass("is-hidden");
 });
 // random gif image on fun page
 var giphyURL = "https://api.giphy.com/v1/gifs/random?limit=1&tag=drink&api_key=" + giphyApiKey;
