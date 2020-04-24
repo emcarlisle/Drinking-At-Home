@@ -12,14 +12,18 @@
   <link href="./assets/CSS/agecheck.css" rel="stylesheet">
   <script src="./assets/JS/jquery.agecheck.js"></script>
   <link rel="stylesheet" href="./assets/CSS/style.css">
+  <link rel="stylesheet" href="./assets/CSS/homepage.css">
 </head>
+  
+  
 
 <body>
   <section class="hero">
     <div class="hero is-light">
-      <div class="hero-light" style="background-image: url(https://i.imgur.com/EZJLDxR.png?1)">
+      <div class="hero-light" style="background-image: url(https://i.imgur.com/EZJLDxR.png?1); background-size: no-repeat">
+        <!--Quarantine Count-->
         <div class="container">
-          <header class="has-text-centered">Time Since Quarantine</header>
+          <header class="has-text-centered">Quarantine Count</header>
           <div id="clockdiv" display="is-inline-block">
             <div>
               <span class="months" id="months"></span>
@@ -39,6 +43,7 @@
             </div>
           </div>
         </div>
+        <!--Header-->
         <h1 class="title">Drinking@Home</h1>
         <!-- NAV BAR -->
         <navbar>
@@ -67,11 +72,38 @@
     </div>
 
     <!-- Home Page  -->
-    <div id="home-pg" class="hero is-info">
-      <div class="hero-info">
-        <p>Home page</p>
+    <div id="home-pg" class="hero">
+      <div class="hero-body">
+        <div class="title is-ancestor">
+          <div class="tile is-vertical is-8">
+            <div class="tile is-parent is-vertical">
+              <div class="title is-child box">
+                
+                <p>
+                  <span class="title2">Welcome to Drinking@Home!</span>
+                  <figure class="image is-128x128">
+                  <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="home-img"/>
+                </figure>
+                <p>
+                  <span class="paragraph">While you’re doing your part by staying indoors, we’re doing our part by helping you get through the
+                  quarantine one drink at a time. Simply choose what spirits you have on hand and we’ll direct you to a
+                  delicious recipe. Vodka, Whisky, rum? It’s all here. All you have to do is point, click, and drink.</span>
+                </p>
+                
+                <br>
+                <p>
+                  <span class="signature">Cheers, and Happy Quarantine!</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    </div>
+    </div>
+              
+    <!-- Spirit Page-->
     <div id="spirit-pg" class="hero is-hidden">
       <div class="spirit-pg">
         <div class="columns is-multiline">
