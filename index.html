@@ -12,7 +12,6 @@
   <link href="./assets/CSS/agecheck.css" rel="stylesheet">
   <script src="./assets/JS/jquery.agecheck.js"></script>
   <link rel="stylesheet" href="./assets/CSS/homepage.css">
-  <link rel="stylesheet" href="./assets/CSS/spiritpg.css">
   <link rel="stylesheet" href="./assets/CSS/style.css">
 
 </head>
@@ -20,13 +19,13 @@
 
 
 <body>
-  <section class="hero">
+  <div class="hero">
     <div class="hero is-light">
       <div class="hero-light"
         style="background-image: url(https://i.imgur.com/EZJLDxR.png?1); background-size: no-repeat">
         <!--Quarantine Count-->
         <div class="container">
-          <header class="has-text-centered">Quarantine Count</header>
+          <header class="header">Quarantine Count</header>
           <div id="clockdiv" display="is-inline-block">
             <div>
               <span class="months" id="months"></span>
@@ -54,22 +53,23 @@
             <a id="nav-btn" class="nav-item is-tab is-active home">Home</a>
             <a id="nav-btn" class="nav-item is-tab spirit">Spirit Type</a>
             <a id="nav-btn" class="nav-item is-tab fun">Random Fun</a>
-            <div class="navbar-end">
-              <div class="navbar-item is-pulled-right">
-                <div class="field is-grouped">
-                  <p class="control">
-                    <input class="input" id="user-input" type="text" placeholder="Favorite Cocktail?">
-                  </p>
-                  <p class="control">
-                    <a class="button" id="search-cocktails">
-                      <span class="icon">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                      </span>
-                    </a>
-                  </p>
-                </div>
+          </div>
+          <div class="navbar-start">
+            <div class="navbar-item is-pulled-left">
+              <div class="field is-grouped">
+                <p class="control">
+                  <input class="input" id="user-input" type="text" placeholder="Favorite Cocktail?">
+                </p>
+                <p class="control">
+                  <a class="button" id="search-cocktails">
+                    <span class="icon">
+                      <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                </p>
               </div>
             </div>
+          </div>
         </navbar>
       </div>
     </div>
@@ -81,178 +81,232 @@
           <div class="tile is-vertical is-8">
             <div class="tile is-parent is-vertical">
               <div class="title is-child box">
-
-                <p>
-                  <span class="title2">Welcome to Drinking@Home!</span>
-                  <figure class="image is-128x128">
-                    <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="home-img" />
-                  </figure>
-                  <p>
-                    <span class="paragraph">While you’re doing your part by staying indoors, we’re doing our part by
-                      helping you get through the
-                      quarantine one drink at a time. Simply choose what spirits you have on hand and we’ll direct you
-                      to a
-                      delicious recipe. Vodka, Whisky, rum? It’s all here. All you have to do is point, click, and
-                      drink.</span>
-                  </p>
-
-                  <br>
-                  <p>
-                    <span class="signature">Cheers, and Happy Quarantine!</span>
-                  </p>
+                <h1 class="title2">Welcome to Drinking@Home!</h1>
+                <figure class="image is-128x128 home-img">
+                  <img src="./assets/tulips-drink-and-books.jpg" alt="whiskey drink and books" id="home-img" />
+                </figure>
+                <p class="paragraph">
+                  While you’re doing your part by staying indoors, we’re doing our part by
+                  helping you get through the
+                  quarantine one drink at a time. Simply choose what spirits you have on hand and we’ll direct you
+                  to a
+                  delicious recipe. Vodka, Whisky, rum? It’s all here. All you have to do is point, click, and
+                  drink.
+                </p>
+                <footer>
+                  <h3 class="signature">Cheers, and Happy Quarantine!</h3>
+                </footer>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    </div>
+  </div>
+  </div>
 
-    <!-- Recipes by spirit  -->
-    <div id="spirit-pg" class="hero is-hidden">
-      <main class="spirit-pg">
-        <div class="columns is-multiline">
-          <div class="column is-one-fourth card-large">
-            <div class="card-image">
-              <figure class="image">
-                <img src="https://www.thecocktaildb.com/images/ingredients/vodka.png" alt="vodka bottle"> </figure>
-            </div>
-            <div class="card-content">
-              <p> Short sentence here</p>
-              <button class="button is-primary is-light vodka spirit" id="vodka">Vodka</button>
-            </div>
+  <!-- Recipes by spirit  -->
+  <div id="spirit-pg" class="hero is-hidden">
+    <main class="spirit-pg">
+
+      <div class="columns is-multiline">
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/vodka.png" alt="vodka bottle"> </figure>
           </div>
-          <div class="column is-one-fourth card-large">
-            <div class="card-image">
-              <figure class="image">
-                <img src="https://www.thecocktaildb.com/images/ingredients/whiskey.png" alt="whiskey bottle">
-              </figure>
-            </div>
-            <div class="card-content">
-              <p>Short sentence here</p>
-              <button class="button is-primary is-light whiskey spirit" id="whiskey">Whiskey</button>
-            </div>
+          <div class="card-content">
+            <p class="spirit-dsc"> Vodka is a clear, colorless, unaged liquor "made from ethyl alcohol from agricultural
+              origin". It was originally made in Russia from potatoes, but today's vodka, which is almost odorless and
+              tasteless, is usually made from grain, primarily barley and wheat, and occasionally from rye. <br> <br>
+              "The Tsar of all drinks, a drink which makes you strong and clever." </p> <br>
+            <button class="button is-primary is-light vodka spirit" id="vodka">Vodka Cocktails</button>
           </div>
-          <div class="column is-one-fourth card-large">
-            <div class="card-image">
-              <figure class="image">
-                <img src="https://www.thecocktaildb.com/images/ingredients/rum.png" alt="rum bottle"> </figure>
-            </div>
-            <div class="card-content">
-              <p>Short sentence here</p>
-              <button class="button is-primary is-light rum spirit" id="rum">Rum</button>
-            </div>
+        </div>
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/whiskey.png" alt="whiskey bottle">
+            </figure>
           </div>
-          <div class="column is-one-fourth card-large">
-            <div class="card-image">
-              <figure class="image">
-                <img src="https://www.thecocktaildb.com/images/ingredients/gin.png" alt="rum bottle"> </figure>
-            </div>
-            <div class="card-content">
-              <p>Short sentence here</p>
-              <button class="button is-primary is-light gin spirit" id="gin">Gin</button>
-            </div>
+          <div class="card-content">
+            <p class="spirit-dsc"> Whisky or whiskey is a type of distilled alcoholic beverage made from fermented grain
+              mash. Various grains are used for different varieties, including barley, corn, rye, and wheat.<br>
+              <br>"The oil of conversation, the philosophic wine, the ale that is consumed when good fellows get
+              together..."</p> <br>
+            <button class="button is-primary is-light whiskey spirit" id="whiskey">Whiskey Cocktails</button>
           </div>
+        </div>
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/rum.png" alt="rum bottle"> </figure>
+          </div>
+          <div class="card-content">
+            <p class="spirit-dsc">Rum is a distilled alcoholic drink made by fermenting then distilling sugarcane
+              molasses or sugarcane juice. The distillate, a clear liquid, is usually aged in oak barrels. <br> <br>
+              <br> "The best ideas come while sipping rum."</p><br> <br>
+            <button class="button is-primary is-light rum spirit" id="rum">Rum Cocktails</button>
+          </div>
+        </div>
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/gin.png" alt="Gin bottle"> </figure>
+          </div>
+          <div class="card-content">
+            <p class="spirit-dsc">Gin is an unaged liquor made by distilling grains such as barley, corn or rye. Its
+              bouquet comes from juniper berries, coriander, herbs and spices, usually added to the grain mash during
+              distillation. <br> "A bar without gin is like an Italian kitchen without pasta" </p> <br> <br>
+            <button class="button is-primary is-light gin spirit" id="gin">Gin Cocktails</button>
+          </div>
+        </div>
+
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/tequila.png" alt="tequila bottle"> </figure>
+          </div>
+          <div class="card-content">
+            <p class="spirit-dsc">Tequila is a distilled spirit made from the agave plant. The liquor can only be
+              produced in designated areas of Mexico. Today, it is one of the most popular liquors in the world" <br>
+              "Tequila probably won't fix your problems but it's worth a shot." </p> <br>
+            <button class="button is-primary is-light tequila spirit" id="tequila">Tequila Cocktails</button>
+          </div>
+        </div>
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/vermouth.png" alt="vermouth bottle">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="spirit-dsc">Technically, vermouth isn’t a spirit but a fortified wine—a flavored, aromatized wine
+              that’s had its ABV boosted with some kind of neutral alcohol (e.g. clear grape brandy) and been flavored
+              with a variety of herbs, botanicals, and spices. Historically, the way vermouth was flavored categorized
+              it as either red (associated with Italy) or white/dry (associated with France).<br>
+              <br>"Do not allow children to mix drinks. It is unseemly and they use too much vermouth."</p> <br>
+            <button class="button is-primary is-light vermouth spirit" id="vermouth">Vermouth Cocktails</button>
+          </div>
+        </div>
+        <div class="column is-one-fourth card-large">
+          <div class="card-image bottle-img">
+            <figure class="image">
+              <img src="https://www.thecocktaildb.com/images/ingredients/brandy.png" alt="brandy bottle"> </figure>
+          </div>
+          <div class="card-content">
+            <p class="spirit-dsc">Brandy is a distilled spirit produced from fermented fruit juice. Most often, the
+              fruit is grapes—making brandy distilled wine—though apple, apricot, peach, and other fruits can be used to
+              make brandy. It"s produced around the world as Cognac, Armagnac, pisco, eau-de-vie, and other styles. <br>
+              <br>
+              <br> "The most sensible thing to do to people you hate is to drink their brandy."</p><br> <br>
+            <button class="button is-primary is-light brandy spirit" id="brandy">Brandy Cocktails</button>
+          </div>
+        </div>
+
           <div class="spirit-info column is-full"> </div>
-          <div class='card'>
+          <div class="card column">
             <div class="spirit-recipes card-content"> </div>
           </div>
         </div>
-      </main>
-    </div>
-    <!-- end of page -->
-    <!-- Fun page -->
-    <div id="fun-pg" class="hero is-link is-hidden">
-      <div class="hero-body">
-        <div class="tile is-ancestor">
-          <div class="tile is-vertical is-8">
-            <div class="tile">
-              <div class="tile is-parent is-vertical">
-                <article class="tile is-child notification is-info">
-                  <figure class="image is-square">
-                    <div id="gif-img" class="tile"></div>
-                  </figure>
-                </article>
-              </div>
-              <div class="tile is-parent">
-                <article class="tile is-child notification is-info">
-                  <p class="title text-center"><span id="random-drink-name"></span></p>
-                  <figure class="image is-4by3">
-                    <div id="random-drink-fun" class="tile"></div>
-                  </figure>
-                </article>
-              </div>
+
+      </div>
+      </div>
+
+    </main>
+  </div>
+  <!-- end of page -->
+  <!-- Fun page -->
+  <div id="fun-pg" class="hero is-link is-hidden">
+    <div class="hero-body">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-info">
+                <figure class="image is-square">
+                  <div id="gif-img" class="tile"></div>
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-info">
+                <p class="title text-center"><span id="random-drink-name"></span></p>
+                <figure class="image is-4by3">
+                  <div id="random-drink-fun" class="tile"></div>
+                </figure>
+              </article>
             </div>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-info">
-              <div class="content">
-                <p class="title text-center">Ingredients</p>
-                <div class="subtitle">
-                  <ul id="ingredients"></ul>
-                </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <div class="content">
+              <p class="title text-center">Ingredients</p>
+              <div class="subtitle">
+                <ul id="ingredients"></ul>
               </div>
-            </article>
-          </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Search Page -->
-    <div id="search-pg" class="hero is-link is-hidden">
-      <div class="hero-body">
-        <div class="tile is-ancestor">
-          <div class="tile is-vertical is-8">
-            <div class="tile">
-              <div class="tile is-parent is-vertical">
-                <article class="tile is-child notification is-info">
-                  <p class="title text-center"><span id="search-drink-name"></span></p>
-                  <figure class="image is-4by3">
-                    <div id="search-drink-img" class="tile"></div>
-                  </figure>
-                </article>
-              </div>
-              <div class="tile is-parent">
-                <article class="tile is-child notification is-info">
-                  <div class="content">
-                    <p class="title text-center">Ingredients</p>
-                    <div class="subtitle">
-                      <ul id="search-ingredients"></ul>
-                    </div>
+  <!-- Search Page -->
+  <div id="search-pg" class="hero is-link is-hidden">
+    <div class="hero-body">
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-info">
+                <p class="title text-center"><span id="search-drink-name"></span></p>
+                <figure class="image is-4by3">
+                  <div id="search-drink-img" class="tile"></div>
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-info">
+                <div class="content">
+                  <p class="title text-center">Ingredients</p>
+                  <div class="subtitle">
+                    <ul id="search-ingredients"></ul>
                   </div>
-                </article>
-              </div>
+                </div>
+              </article>
             </div>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification is-info">
-              <div class="content">
-                <div>
-                  <p class="title text-center">Instructions</p>
-                </div>
-                <div class="subtitle">
-                  <p id="search-instructions"></p>
-                </div>
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <div class="content">
+              <div>
+                <p class="title text-center">Instructions</p>
               </div>
-            </article>
-          </div>
+              <div class="subtitle">
+                <p id="search-instructions"></p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Error Page -->
-    <div id="search-error-pg" class="container mt-2 is-link is-hidden">
-      <article class="message is-danger">
-        <div class="message-header">
-          <p>Error</p>
-        </div>
-        <div class="message-body">
-          We cannot find the drink you searched for. Try again!
-        </div>
-      </article>
-    </div>
-  </section>
+  <!-- Error Page -->
+  <div id="search-error-pg" class="container mt-2 is-link is-hidden">
+    <article class="message is-danger">
+      <div class="message-header">
+        <p>Error</p>
+      </div>
+      <div class="message-body">
+        We cannot find the drink you searched for. Try again!
+      </div>
+    </article>
+  </div>
+  </div>
 </body>
 
 <script src="./assets/JS/script.js"></script>
