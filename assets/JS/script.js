@@ -25,7 +25,6 @@ $(document).ready(function () {
     }
     // Get Method using spirit name or ingredient 
     $(".spirit").on("click", function () {
-
         $('.spirit-recipes').html('');
         $('.spirit-info').html('');
         var spirit = $(this).attr("id");
@@ -34,8 +33,7 @@ $(document).ready(function () {
             url: url,
             method: "GET"
         }).then(function (res) {
-            $('<h2>' + (res.ingredients[0].strIngredient) + ' Recipes' + '</h2>').appendTo('.spirit-info')
-            // $('<text>' + (res.ingredients[0].strDescription) + '</text>').appendTo('.spirit-info')
+            $("<h2 class='recipeheader'>" + (res.ingredients[0].strIngredient) + ' Recipes' + '</h2>').appendTo('.spirit-info')
             $.ajax({
                 url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spirit,
                 method: "GET"
@@ -46,27 +44,21 @@ $(document).ready(function () {
                     drinkIDs.push(drinkID)
                 }
                 for (let i = 0; i < drinkIDs.length; i++) {
-                    console.log(drinkIDs[i])
                     $.ajax({
                         method: "GET",
                         url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkIDs[i]
                     }).then(function (data) {
-                        console.log("response", data)
                         let drink = {};
                         drink.name = data.drinks[0].strDrink;
                         drink.image = data.drinks[0].strDrinkThumb;
                         drink.text = data.drinks[0].strInstructions;
                         drink.ingredients = []
-
                         $('.spirit-recipes')
-                            .append("<div class='tile is-ancestor'><div class='tile is-parent'><div class='tile is-child box'><h3 class='drink-name'>" + drink.name + "</h3><img class='cocktail-img' id='cocktail-img' src=" + drink.image + "><p class='ingr-text'></p><p id='" + i + "'></p>" + drink.text + "</div></div>");
-
-                        for (var j = 1; j <= 15; j++) {
+                            .append("<div class='tile is-ancestor'><div class='tile is-parent'><div class='tile is-child box'><h3 class='drink-name'>" + drink.name + "</h3><figure class='image is-128x128'><img class='cocktail-img' id='cocktail-img' src=" + drink.image + "></figure><text class='ingr-text'></text><text id='" + i + "'></text>" + drink.text + "</div></div>");
+                            for (var j = 1; j <= 15; j++) {
                             var currentDrink = data.drinks[0]
                             var ingredient = currentDrink['strIngredient' + j];
                             var measure = currentDrink['strMeasure' + j];
-                            console.log(ingredient, measure)
-
                             if (ingredient) {
                                 var fullIngred;
                                 if (measure) {
@@ -75,7 +67,7 @@ $(document).ready(function () {
                                     fullIngred = ingredient;
                                 }
 
-                                $('#' + i).append($("<li>").attr("id", "ing-").text(fullIngred))
+                                $('#' + i).append($("<li>").attr("id", "ing-list").text(fullIngred))
                             }
                         }
 
@@ -94,7 +86,6 @@ $(".cocktail").on("click", function () {
         url: url,
         method: "GET"
     }).then(function (response) {
-        console.log(response)
     });
 });
 // Get Method for random cocktail
@@ -140,14 +131,14 @@ function randomGifImage(response) {
         method: "GET"
     }).then(function (response) {
         $("#gif-img").empty();
-        var image = $("<img>").attr("src", response.data.image_url);
-        $("#gif-img").append(image).addClass("");
+        var image = $("<img>").attr("src", response.data.image_url).addClass("img-radius");
+        $("#gif-img").append(image);
     });
 }
 // Function for processing response for cocktail api
 function funPageRandom(response) {
     var randomDrink = response.drinks[0];
-    var image = $("<img>").attr("src", randomDrink.strDrinkThumb);
+    var image = $("<img>").attr("src", randomDrink.strDrinkThumb).addClass("img-radius");
     $("#random-drink-fun").append(image);
     var randomDrinkName = response.drinks[0].strDrink;
     $("#random-drink-name").append(randomDrinkName);
