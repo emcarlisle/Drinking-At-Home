@@ -1,0 +1,11 @@
+.spirit-recipes {
+    margin-right: auto;
+  margin-left:  auto;
+  padding-right: 10px;
+  padding-left:  10px;
+}
+
+.drink-name {
+    font-weight: bold;
+    padding-bottom: 10px;
+}

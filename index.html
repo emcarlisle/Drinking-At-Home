@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+​
 
 <head>
   <meta charset="utf-8" />
@@ -11,14 +12,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <link href="./assets/CSS/agecheck.css" rel="stylesheet">
   <script src="./assets/JS/jquery.agecheck.js"></script>
+  <link rel="stylesheet" href="./assets/CSS/spiritpg.css">
   <link rel="stylesheet" href="./assets/CSS/style.css">
 </head>
+​
 
 <body>
   <section class="hero">
     <div class="hero-body" style="background: url(https://images.app.goo.gl/db4kRdtS13NDs6WJ6)">
       <!-- NAV BAR -->
-      
+
       <div class="hero is-light">
         <div class="hero-light">
           <nav>
@@ -64,9 +67,9 @@
           <p>Home page</p>
         </div>
       </div>
-      
-    <div id="spirit-pg" class="hero is-hidden">
-        <div class="spirit-pg">
+      <!-- Recipes by spirit  -->
+      <div id="spirit-pg" class="hero is-hidden">
+        <main class="spirit-pg">
           <div class="columns is-multiline">
             <div class="column is-one-fourth card-large">
               <div class="card-image">
@@ -109,13 +112,16 @@
                 <button class="button is-primary is-light gin spirit" id="gin">Gin</button>
               </div>
             </div>
-            <div class="spirit-recipes column is-full"> </div>
+            <div class="spirit-info column is-full"> </div>
+            <div class='card'>
+              <div class="spirit-recipes card-content"> </div>
+            </div>
           </div>
-        </div>
+        </main>
       </div>
+      <!-- end of page -->
 
-    
-       <!-- Recipes by Type -->
+      <!-- Recipes by Type -->
       <div id="type-pg" class="hero is-warning is-hidden">
         <div class="hero-warning">
           <p>type Page</p>
@@ -125,7 +131,7 @@
           <button class="button is-link cocktail" id="long island tea">Long Island Tea</button>
         </div>
       </div>
-
+      ​
       <!-- Fun page -->
       <div id="fun-pg" class="hero is-link is-hidden">
         <div class="hero-link">
@@ -164,14 +170,15 @@
             </div>
           </div>
         </div>
-
+        ​
       </div>
-    
-    
+
+
   </section>
-
+  ​
 </body>
-
+​
 <script src="./assets/JS/script.js"></script>
+​
 
 </html>
