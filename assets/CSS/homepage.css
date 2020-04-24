@@ -86,7 +86,7 @@ a.button {
 p {
     display: flex;
     justify-content: center;
-    color: rgb(255, 255, 255);
+    
 }
 
 p.title {
@@ -94,10 +94,6 @@ p.title {
     justify-content: center;
 }
 
-
-.hero {
-    background-color: steelblue;
-}
 
 .title2 {
     color: black;
@@ -114,7 +110,6 @@ p.title {
     justify-content: center;
 }
 .box {
-    background-color: lavender;
     justify-content: center;
 }
 
